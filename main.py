@@ -1,16 +1,25 @@
-# This is a sample Python script.
+from tkinter import*
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+def calc():
+    form=formEntry.get()
+    global ans
+    ans = eval(form)
+    print(ans)
 
+#window設定
+window = Tk()
+window.title("calculator")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+ans = '0'
 
+#widget生成
+formEntry=Entry()
+eqalButton=Button(text="=",command=calc)
+ansLabel=Label(foreground='#FFFFFF', background='#48D1CC',textvariable=ans)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+#widget配置
+formEntry.grid(row=0,column=0)
+eqalButton.grid(row=1,column=0)
+ansLabel.grid(row=1,column=1)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+window.mainloop()
