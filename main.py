@@ -3,19 +3,19 @@ from tkinter import*
 def calc():
     form=formEntry.get()
     global ans
-    ans = eval(form)
+    ans.set(eval(form))
     print(ans)
 
 #window設定
 window = Tk()
 window.title("calculator")
 
-ans = '0'
+ans = StringVar()
 
 #widget生成
 formEntry=Entry()
 eqalButton=Button(text="=",command=calc)
-ansLabel=Label(foreground='#FFFFFF', background='#48D1CC',textvariable=ans)
+ansLabel=Label(foreground='#000000', background='#FFFFFF',textvariable=ans)
 
 #widget配置
 formEntry.grid(row=0,column=0)
